@@ -36,6 +36,7 @@ export default function Navbar() {
           <Link href="/products">Watches</Link>
           <Link href="/search">Search</Link>
           <Link href="/about">About</Link>
+          <Link href="/profile">Profile</Link>
           <button onClick={toggleCart}>Cart</button>
         </div>
       </div>
