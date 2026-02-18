@@ -4,8 +4,9 @@ import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { useAuth } from "@/context/AuthContext";
 import { db, auth } from "@/firebase/firebase";
-import { addDoc, collection } from "firebase/firestore";
+import { doc, setDoc, addDoc, collection, getDocs, query, where, deleteDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { getUserByEmail } from "@/lib/getUserByEmail";
 
 export default function CheckoutPage() {
   const { cart } = useCart();
@@ -24,30 +25,69 @@ export default function CheckoutPage() {
     try {
       let userId = user?.uid || null;
 
-      // 🟢 If guest wants account
-      if (!user && createAccount) {
-        const res = await createUserWithEmailAndPassword(auth, email, password);
-        userId = res.user.uid;
+      // 🔍 Check if email already registered
+      const existingUserId = await getUserByEmail(email);
+      if (existingUserId) {
+        userId = existingUserId;
       }
 
-      // 🟢 Save order
-      await addDoc(collection(db, "orders"), {
-        userId: userId || null,
-        guestInfo: {
+      // 🟢 If user creating account new
+      if (!userId && createAccount) {
+        const res = await createUserWithEmailAndPassword(auth, email, password);
+        userId = res.user.uid;
+
+        // create user doc
+        await setDoc(doc(db, "users", userId), {
+          name,
+          email,
+          phone,
+          createdAt: new Date(),
+        });
+      }
+
+      // 🟢 If user exists → store inside user orders
+      if (userId) {
+        const orderRef = doc(collection(db, "orders", userId, "userOrders"));
+        await setDoc(orderRef, {
+          items: cart,
+          total,
+          createdAt: new Date(),
+        });
+
+        // 🔥 MOVE old guest orders of same email
+        const guestQuery = query(
+          collection(db, "guestOrders"),
+          where("email", "==", email)
+        );
+
+        const guestSnap = await getDocs(guestQuery);
+
+        for (const g of guestSnap.docs) {
+          const data = g.data();
+
+          const newRef = doc(collection(db, "orders", userId, "userOrders"));
+          await setDoc(newRef, data);
+
+          await deleteDoc(g.ref); // remove guest order
+        }
+      }
+      else {
+        // 🟡 Pure guest order
+        await addDoc(collection(db, "guestOrders"), {
           name,
           email,
           phone,
           address,
-        },
-        items: cart,
-        total,
-        createdAt: new Date(),
-      });
+          items: cart,
+          total,
+          createdAt: new Date(),
+        });
+      }
 
       alert("Order placed successfully 🚀");
     } catch (err) {
       console.error(err);
-      alert("Error placing order");
+      alert("Order error");
     }
   };
 
