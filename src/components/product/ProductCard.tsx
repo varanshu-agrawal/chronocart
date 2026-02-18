@@ -23,7 +23,7 @@ export default function ProductCard({ product }: { product: Product }) {
             qty: 1,
           })
         }
-        className="mt-4 bg-black text-white px-4 py-2"
+        className="mt-4 bg-black text-white px-4 py-2 cursor-pointer"
       >
         Add to Cart
       </button>
