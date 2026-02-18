@@ -1,8 +1,23 @@
 "use client";
 import { useCart } from "@/context/CartContext";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 export default function CartDrawer() {
   const { cart, isOpen, toggleCart, removeFromCart } = useCart();
+
+  const drawerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!drawerRef.current) return;
+
+    if (isOpen) {
+      gsap.to(drawerRef.current, { x: 0, duration: 0.4, ease: "power3.out" });
+    } else {
+      gsap.to(drawerRef.current, { x: 400, duration: 0.4 });
+    }
+  }, [ isOpen ]);
+
 
   return (
     <>
@@ -14,9 +29,9 @@ export default function CartDrawer() {
       )}
 
       <div
-        className={`fixed top-0 right-0 h-full w-96 bg-white z-50 shadow-xl transform transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        ref={drawerRef}
+        className="fixed top-0 right-0 h-full w-96 bg-white z-50 shadow-xl"
+        style={{ transform: "translateX(400px)" }}
       >
         <div className="p-6 flex justify-between">
           <h2 className="text-xl font-semibold">Your Cart</h2>
