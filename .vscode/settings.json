@@ -1,0 +1,65 @@
+{
+    "css.validate": true,
+    "css.lint.hexColorLength": "error",
+    "css.completion.completePropertyWithSemicolon": true,
+    "css.completion.triggerPropertyValueCompletion": false,
+    "css.hover.documentation": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.detectIndentation": true,
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": true,
+    "editor.comments.insertSpace": true,
+    "editor.suggest.showIssues": true,
+    "editor.tabSize": 2,
+    "editor.suggest.insertMode": "insert",
+    "editor.multiCursorModifier": "alt",
+    "editor.wordWrapColumn": 80,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "eslint.validate": [
+        "json",
+        "javascript",
+        "typescript",
+        "html"
+    ],
+    "files.insertFinalNewline": false,
+    "html.autoClosingTags": true,
+    "html.format.enable": true,
+    "html.format.wrapLineLength": 120,
+    "html.hover.documentation": true,
+    "markdown-mermaid.darkModeTheme": "dark",
+    "markdown-mermaid.languages": [
+        "mermaid"
+    ],
+    "markdown.styles": [
+        "https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    ],
+    "markdown-kroki.url": "https://kroki.con-x.url.gs.com",
+    "javascript.format.enable": true,
+    "javascript.suggest.autoImports": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "json.format.enable": true,
+    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.format.enable": true,
+    "typescript.autoClosingTags": true,
+    "typescript.suggest.autoImports": true,
+    "typescript.suggest.paths": true,
+    "typescript.suggest.jsdoc.generateReturns": true,
+    "typescript.validate.enable": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.startupEditor": "none",
+    "window.autoDetectColorScheme": false,
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "eslint.workingDirectories": [
+        {
+            "directory": "."
+        }
+    ]
+}
