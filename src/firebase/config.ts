@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBAbe5tW-Vz1Ke92g43PwueN3N2kX5hYIs",
-  authDomain: "chronocart-71779.firebaseapp.com",
-  projectId: "chronocart-71779",
-  storageBucket: "chronocart-71779.firebasestorage.app",
-  messagingSenderId: "361802490499",
-  appId: "1:361802490499:web:0db3bc41e62b70936bb1b6"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 export const app = initializeApp(firebaseConfig);
