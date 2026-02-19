@@ -11,7 +11,7 @@ export const watches: Product[] = [
     "stock": 12,
     "description": "Iconic luxury diving watch with timeless design and premium craftsmanship.",
     "features": [ "Automatic Movement", "Water Resistant 300m", "Sapphire Crystal", "Ceramic Bezel" ],
-    "images": [ "/watches/rolex-sub.png" ]
+  "images": [ "/watches/rolex-sub.webp" ]
   },
   {
     "id": "omega-speedmaster",
@@ -23,7 +23,7 @@ export const watches: Product[] = [
     "stock": 15,
     "description": "Legendary moonwatch worn during NASA missions with precise chronograph.",
     "features": [ "Chronograph", "Tachymeter", "Manual Wind", "Sapphire Crystal" ],
-    "images": [ "/watches/omega-speed.png" ]
+  "images": [ "/watches/omega-speed.webp" ]
   },
   {
     "id": "tag-heuer-carrera",
@@ -35,7 +35,7 @@ export const watches: Product[] = [
     "stock": 18,
     "description": "Performance-driven racing watch with sleek sporty design.",
     "features": [ "Automatic", "Chronograph", "Steel Bracelet", "Water Resistant" ],
-    "images": [ "/watches/tag-carrera.png" ]
+  "images": [ "/watches/tag-carrera.jpg" ]
   },
   {
     "id": "audemars-royal-oak",
@@ -47,7 +47,7 @@ export const watches: Product[] = [
     "stock": 5,
     "description": "Ultra luxury statement watch with iconic octagonal bezel.",
     "features": [ "Swiss Automatic", "Luxury Finish", "Limited Edition", "Sapphire Glass" ],
-    "images": [ "/watches/royal-oak.png" ]
+  "images": [ "/watches/royal-oak.webp" ]
   },
   {
     "id": "apple-watch-ultra",
@@ -59,7 +59,7 @@ export const watches: Product[] = [
     "stock": 25,
     "description": "Premium smartwatch with fitness tracking and seamless Apple integration.",
     "features": [ "Heart Rate Monitor", "GPS", "ECG", "Water Resistant" ],
-    "images": [ "/watches/apple-ultra.png" ]
+  "images": [ "/watches/apple-ultra.jpeg" ]
   },
   {
     "id": "samsung-galaxy-watch-6",
@@ -71,7 +71,7 @@ export const watches: Product[] = [
     "stock": 30,
     "description": "Advanced smartwatch with sleek design and health tracking.",
     "features": [ "AMOLED Display", "Fitness Tracking", "Bluetooth", "Sleep Monitor" ],
-    "images": [ "/watches/galaxy6.png" ]
+  "images": [ "/watches/galaxy6.jpg" ]
   },
   {
     "id": "tissot-prx",
@@ -83,7 +83,7 @@ export const watches: Product[] = [
     "stock": 20,
     "description": "Elegant Swiss watch with integrated bracelet and classic design.",
     "features": [ "Swiss Made", "Quartz Movement", "Slim Profile", "Steel Case" ],
-    "images": [ "/watches/tissot-prx.png" ]
+  "images": [ "/watches/tissot-prx.webp" ]
   },
   {
     "id": "seiko-prospex",
@@ -95,7 +95,7 @@ export const watches: Product[] = [
     "stock": 22,
     "description": "Professional diver watch known for durability and precision.",
     "features": [ "200m Water Resistant", "Automatic", "Luminous Hands", "Hardlex Glass" ],
-    "images": [ "/watches/seiko-prospex.png" ]
+  "images": [ "/watches/eiko-prospex.webp" ]
   },
   {
     "id": "casio-gshock",
@@ -107,7 +107,7 @@ export const watches: Product[] = [
     "stock": 40,
     "description": "Rugged and shockproof watch for extreme conditions.",
     "features": [ "Shock Resistant", "Digital Display", "Stopwatch", "LED Light" ],
-    "images": [ "/watches/gshock.png" ]
+  "images": [ "/watches/gshock.avif" ]
   },
   {
     "id": "hublot-bigbang",
@@ -119,7 +119,7 @@ export const watches: Product[] = [
     "stock": 6,
     "description": "Bold luxury watch with futuristic design and premium build.",
     "features": [ "Skeleton Dial", "Automatic", "Sapphire Crystal", "Limited Edition" ],
-    "images": [ "/watches/hublot.png" ]
+  "images": [ "/watches/hublot.jpg" ]
   },
   {
     "id": "fossil-gen6",
@@ -131,7 +131,7 @@ export const watches: Product[] = [
     "stock": 35,
     "description": "Stylish smartwatch with WearOS and modern features.",
     "features": [ "WearOS", "Fitness Tracking", "Bluetooth", "Touchscreen" ],
-    "images": [ "/watches/fossil-gen6.png" ]
+  "images": [ "/watches/fossil-gen6.jpg" ]
   },
   {
     "id": "patek-philippe-nautilus",
@@ -143,7 +143,7 @@ export const watches: Product[] = [
     "stock": 3,
     "description": "One of the most prestigious luxury watches in the world.",
     "features": [ "Swiss Automatic", "Luxury Finish", "Limited Production", "Sapphire Back" ],
-    "images": [ "/watches/patek-nautilus.png" ]
+  "images": [ "/watches/patek-nautilus.jpg" ]
   }
 ]
 ;
