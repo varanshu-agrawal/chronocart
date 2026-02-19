@@ -5,12 +5,15 @@ import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { useWishlist } from "@/context/WishlistContext";
 
 export default function ProductCard({ product }: { product: Product }) {
   const { addToCart } = useCart();
   const [ hovered, setHovered ] = useState(false);
-  const [ wishlist, setWishlist ] = useState(false);
   const [ quickView, setQuickView ] = useState(false);
+
+  const { wishlist, toggleWishlist } = useWishlist();
+  const isWish = wishlist.includes(product.id);
 
   const isLowStock = product.stock <= 3;
 
@@ -30,11 +33,11 @@ export default function ProductCard({ product }: { product: Product }) {
 
         {/* WISHLIST BUTTON */}
         <button
-          onClick={() => setWishlist(!wishlist)}
-          className="absolute top-4 right-4 z-10 bg-black/60 backdrop-blur px-2 py-1 rounded-full"
+          onClick={() => toggleWishlist(product.id)}
+          className="absolute cursor-pointer top-4 right-4 z-10 bg-black/60 backdrop-blur px-2 py-1 rounded-full"
         >
-          <span className={wishlist ? "text-red-500" : "text-white"}>
-            ♥
+          <span className={isWish ? "text-red-500" : "text-white"}>
+            {isWish ? "♥" : "♡"}
           </span>
         </button>
 
