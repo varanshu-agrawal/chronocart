@@ -46,7 +46,7 @@ export default function Navbar() {
         <Link href="/products?category=Luxury">Luxury</Link>
         <Link href="/products?category=Sport">Sport</Link>
         <Link href="/products?category=Smart">Smart</Link>
-        <Link href="/products?category=Limited">Limited Edition</Link>
+        <Link href="/products?category=Limited">Limited</Link>
       </div>
     </div>
   );
