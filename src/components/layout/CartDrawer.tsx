@@ -30,28 +30,56 @@ export default function CartDrawer() {
 
       <div
         ref={drawerRef}
-        className="fixed top-0 right-0 h-full w-96 bg-white z-50 shadow-xl"
-        style={{ transform: "translateX(400px)" }}
+        className="fixed top-0 right-0 h-full w-[420px] bg-[#0b0b0c] text-white z-50 shadow-2xl border-l border-[#222] p-6 flex flex-col"
+        style={{ transform: "translateX(420px)" }}
       >
-        <div className="p-6 flex justify-between">
-          <h2 className="text-xl font-semibold">Your Cart</h2>
-          <button onClick={toggleCart}>X</button>
-        </div>
+        <h2 className="text-2xl font-semibold mb-6">Your Cart</h2>
 
-        <div className="px-6 space-y-4">
-          {cart.map(item => (
-            <div key={item.id} className="flex justify-between">
+        {/* ITEMS */}
+        <div className="flex-1 overflow-y-auto space-y-5">
+          {cart.length === 0 && (
+            <p className="text-gray-500">Cart is empty</p>
+          )}
+
+          {cart.map((item) => (
+            <div
+              key={item.id}
+              className="flex justify-between items-center border-b border-[#222] pb-4"
+            >
               <div>
-                <p>{item.name}</p>
-                <p>₹{item.price} x {item.qty}</p>
+                <p className="font-medium">{item.name}</p>
+                <p className="text-sm text-gray-400">
+                  ₹{item.price} × {item.qty}
+                </p>
               </div>
-              <button onClick={() => removeFromCart(item.id)}>
+
+              <button
+                onClick={() => removeFromCart(item.id)}
+                className="text-sm text-red-400"
+              >
                 Remove
               </button>
             </div>
           ))}
         </div>
+
+        {/* TOTAL */}
+        <div className="mt-6">
+          <p className="text-lg font-semibold mb-4">
+            Total: ₹
+            {cart.reduce((t, i) => t + i.price * i.qty, 0).toLocaleString()}
+          </p>
+
+          <a
+            href="/checkout"
+            onClick={toggleCart}
+            className="block text-center bg-white text-black py-3 rounded-xl font-semibold hover:bg-[#d4af37] transition"
+          >
+            Checkout
+          </a>
+        </div>
       </div>
+
     </>
   );
 }

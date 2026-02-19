@@ -3,6 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import CartDrawer from "@/components/layout/CartDrawer";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
+import Footer from "@/components/layout/Footer";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Navbar />
             <CartDrawer />
             {children}
+            <Footer />
           </AuthProvider>
         </CartProvider>
       </body>
